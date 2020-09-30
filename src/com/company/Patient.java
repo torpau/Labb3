@@ -6,7 +6,8 @@ class Patient {
 
 
     Patient(String name) {
-        this(name, "");
+        this(name, null);
+        //this(name, "");
     }
 
     Patient(String name, String sickness) {
@@ -18,16 +19,13 @@ class Patient {
     String getName() { return name; }
     String getSickness() { return sickness; }
 
-    boolean isSick() {
-        if(sickness==null||sickness.equals("")) {
-            return false;
-        }
-        return true;
-    }
+    boolean isSick() { return sickness != null; }
+        //return sickness != null && !sickness.equals("");
 
      void takeMedication(Medicine medicin) {
          if(medicin.getTreatmentName().equals(this.sickness)) {
-             sickness = "";
+             sickness = null;
+             //sickness = "";
          }
     }
 
