@@ -1,7 +1,7 @@
 package com.company;
 
 class Patient {
-    private String name;
+    private final String name;
     private String sickness;
 
 
@@ -22,8 +22,8 @@ class Patient {
     boolean isSick() { return sickness != null; }
         //return sickness != null && !sickness.equals("");
 
-     void takeMedication(Medicine medicin) {
-         if(medicin.getTreatmentName().equals(this.sickness)) {
+     void takeMedication(Medicine medicine) {
+         if(medicine.getTreatmentName().equals(this.sickness)) {
              sickness = null;
              //sickness = "";
          }
